@@ -24,11 +24,9 @@
 		<div
 			style="border: 3px solid black; width: 25%; border-radius: 20px; padding: 20px"
 			align="center">
-			<form action="searchFlight" method=post>
-
 				<%
 					Connection con = DBConnection.getConnection();
-					String query = "select * from places";
+					String query = "select * from flightDetails where dfrom = ? and dto = ? and ddate>now();";
 					PreparedStatement ps = con.prepareStatement(query);
 
 					ResultSet rs = ps.executeQuery();
@@ -36,31 +34,35 @@
 					ps = con.prepareStatement(query);
 					rs = ps.executeQuery();
 				%>
-				<label for=from>From :-</label> <select name="from" id="from">
-					<%
-						while (rs.next()) {
-					%>
-					<option value="<%=rs.getString("name")%>"><%=rs.getString("name")%></option>
-					<%
-						}
-					%>
-				</select><br>
-				<br> <label for=to>To :-</label> <select name="to" id="to">
-					<%
-						rs = ps.executeQuery();
-						while (rs.next()) {
-					%>
-					<option value="<%=rs.getString("name")%>"><%=rs.getString("name")%></option>
-					<%
-						}
-					%>
-				</select><br>
-				<br> 
-				<label>No of Passengers : </label>
-				<input type="text" name="passenger">
-				<input type="submit" value="submit" id="myForm" /> <input
-					type="reset" />
-			</form>
+				<table>
+					<tr>
+						<th>Sr. No.</th>
+						<th>AirLine</th>
+						<th>From</th>
+						<th>TO</th>
+						<th>Departure Date</th>
+						<th>Time</th>
+						<th>Price</th>
+						<th>View</th>
+					</tr>
+					
+				<%
+					int i=0;
+					while(rs.next()){	
+					i++;
+				%>
+					<tr>
+						<td><%=i%></td>
+						<td><%=rs.getString("airline") %></td>
+						<td><%=rs.getString("dfrom") %></td>
+						<td><%=rs.getString("dto") %></td>
+						<td><%=rs.getString("ddate") %></td>
+						<td><%=rs.getString("dtime") %></td>
+						<td><%=rs.getString("price") %></td>
+						<td><a href="registerCustomer">Book Ticket</a></td>
+					</tr>
+				<%} %>
+				</table>
 		</div>
 	</div>
 </body>
