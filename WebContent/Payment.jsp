@@ -20,7 +20,9 @@
 		</tr>
 		<tr>
 			<td>Expiry Month and year:</td>
-			<td><input type="Month" name="expiry" required></td>
+			<td><input type="Month" name="expiry" required>
+			<input type="hidden" value="<%=request.getParameter("ticketID")%>" name="ticketID">
+			</td>
 		</tr>
 		<tr>
 			<td><input type="reset" value="Reset"></td>

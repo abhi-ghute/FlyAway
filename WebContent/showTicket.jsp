@@ -74,7 +74,7 @@
 			<td><%=Integer.parseInt(request.getParameter("passenger").trim()) * Integer.parseInt(rs.getString("price"))%></td>
 		</tr>
 		<tr>
-			<th colspan="2"><a href="Payment.jsp?id=request.getParameter("ticketID")"><button style="color:blue;">Pay</button></a></th>
+			<th colspan="2"><a href="Payment.jsp?ticketID=<%=request.getParameter("ticketID")%>"><button style="color:blue;">Pay</button></a></th>
 		</tr>
 
 	</table>
