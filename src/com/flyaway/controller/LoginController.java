@@ -22,20 +22,6 @@ import com.flyaway.service.LoginService;
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	LoginService loginService = new LoginService();
-	@Resource(name = "jdbc/myproject")
-	private DataSource dataSource;
-
-	@Override
-	public void init() throws ServletException {
-		super.init();
-		if(DBConnection.getConnection()==null) {
-			try {
-				DBConnection.setConnection(dataSource.getConnection());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

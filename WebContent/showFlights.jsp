@@ -22,19 +22,20 @@
 		<h1>Search Flight</h1>
 
 		<div
-			style="border: 3px solid black; width: 25%; border-radius: 20px; padding: 20px"
+			style="border: 3px solid black; width: 40%; border-radius: 20px; padding: 20px"
 			align="center">
 				<%
 					Connection con = DBConnection.getConnection();
-					String query = "select * from flightDetails where dfrom = ? and dto = ? and ddate>now();";
+					String query = "select * from flightDetails where dfrom = ? and dto=? and ddate>?";
 					PreparedStatement ps = con.prepareStatement(query);
-
+					ps.setString(1,request.getParameter("from"));
+					ps.setString(2,request.getParameter("to"));
+					ps.setString(3,request.getParameter("tdate"));
+					
 					ResultSet rs = ps.executeQuery();
-
-					ps = con.prepareStatement(query);
 					rs = ps.executeQuery();
 				%>
-				<table>
+				<table border="1">
 					<tr>
 						<th>Sr. No.</th>
 						<th>AirLine</th>
@@ -59,8 +60,10 @@
 						<td><%=rs.getString("ddate") %></td>
 						<td><%=rs.getString("dtime") %></td>
 						<td><%=rs.getString("price") %></td>
-						<td><a href="registerCustomer">Book Ticket</a></td>
+						<td><a href="registerCustomer.jsp?id=<%=rs.getString("id")%>&passenger= <%=request.getParameter("passenger")%>
+						">Book Ticket</a></td>
 					</tr>
+					
 				<%} %>
 				</table>
 		</div>

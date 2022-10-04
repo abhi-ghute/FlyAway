@@ -9,6 +9,8 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <form action="register" method="post">
+
+
 	<table border="1">
 		<tr>
 			<td>Name:</td>
@@ -28,11 +30,14 @@
 		</tr>
 		<tr>
 			<td>Age:</td>
-			<td><input type="text" name="age"></td>
+			<td><input type="text" name="age">
+			<input type="hidden" name="flightId" value="<%=request.getParameter("id")%>">
+			<input type="hidden" name="passenger" value="<%=request.getParameter("passenger")%>">
+			</td>
 		</tr>
 		<tr>
 			<td><input type="reset" value="Reset"></td>
-			<td><input type="submit" value="Login"></td>
+			<td><input type="submit" value="Register"></td>
 		</tr>
 	</table>
 </form>

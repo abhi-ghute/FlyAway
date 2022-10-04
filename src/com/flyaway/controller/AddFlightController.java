@@ -16,7 +16,7 @@ import com.flyaway.service.AddFlightService;
 /**
  * Servlet implementation class AddFlightController
  */
-@WebServlet("/AddFlightController")
+@WebServlet("/insertflight")
 public class AddFlightController extends HttpServlet {
 
 	AddFlightService addFlightService = new AddFlightService();

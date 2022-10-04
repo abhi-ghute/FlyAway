@@ -24,9 +24,10 @@
 		<div
 			style="border: 3px solid black; width: 25%; border-radius: 20px; padding: 20px"
 			align="center">
-			<form action="searchFlight" method=post>
+			<form action="searchFlight" method="GET">
 
 				<%
+				
 					Connection con = DBConnection.getConnection();
 					String query = "select * from places";
 					PreparedStatement ps = con.prepareStatement(query);
@@ -57,7 +58,11 @@
 				</select><br>
 				<br> 
 				<label>No of Passengers : </label>
-				<input type="text" name="passenger">
+				<input type="text" name="passenger"><br><br>
+				
+				<label>Date : </label>
+				<input type="date" name="tdate"><br><br>
+				
 				<input type="submit" value="submit" id="myForm" /> <input
 					type="reset" />
 			</form>
