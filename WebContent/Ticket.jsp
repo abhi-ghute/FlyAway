@@ -16,34 +16,31 @@
 <h1>Flight Details</h1>
 
 <div style="border:3px solid black;width:25%;border-radius:20px;padding:18px" align="center">
-
 	<%
 		Connection con = DBConnection.getConnection();
-		String query = "select * from flightDetails where id = ?";
+		String query = "select * from flightDetails as f inner join tickets as t on f.id=t.flightId where t.id = ? and t.email =?";
 		PreparedStatement ps = con.prepareStatement(query);
-		ps.setString(1, request.getParameter("flightId"));
+		ps.setString(1, request.getParameter("ticket"));
+		ps.setString(2, request.getParameter("email"));
 
 		ResultSet rs = ps.executeQuery();
 		rs = ps.executeQuery();
-		rs.next();
+		
+		if(rs.next()){
 	%>
 
 	<table border="1">
 		<tr>
-			<th>Name</th>
-			<td><%=request.getParameter("name")%></td>
+			<th>Ticket Number</th>
+			<td><%=request.getParameter("ticketID")%></td>
 		</tr>
 		<tr>
-			<th>Email</th>
-			<td><%=request.getParameter("email")%></td>
+			<th>Name</th>
+			<td><%=rs.getString("name")%></td>
 		</tr>
 		<tr>
 			<th>MOB</th>
-			<td><%=request.getParameter("mob")%></td>
-		</tr>
-		<tr>
-			<th>age</th>
-			<td><%=request.getParameter("age")%></td>
+			<td><%=rs.getString("mob")%></td>
 		</tr>
 		<tr>
 			<th>AirLine</th>
@@ -67,7 +64,7 @@
 		</tr>
 		<tr>
 			<th>Passenger</th>
-			<td><%=request.getParameter("passenger")%></td>
+			<td><%=rs.getString("passenger")%></td>
 		</tr>
 		<tr>
 			<th>Price</th>
@@ -75,14 +72,12 @@
 		</tr>
 		<tr>
 			<th>Total Price</th>
-			<td><%=Integer.parseInt(request.getParameter("passenger").trim()) * Integer.parseInt(rs.getString("price"))%></td>
+			<td><%=Integer.parseInt(rs.getString("passenger").trim()) * Integer.parseInt(rs.getString("price").trim())%></td>
 		</tr>
-		<tr>
-			<th colspan="2"><a href="Payment.jsp?ticketID=<%=request.getParameter("ticketID")%>"><button style="color:blue;">Pay</button></a></th>
-		</tr>
-
 	</table>
-</div>
+	<%}else {%>
+		<h1 style="color:red;">No Ticket available with this details</h1>
+	<%} %>
 </div>
 </body>
 </html>

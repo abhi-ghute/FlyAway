@@ -12,8 +12,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body >
+<jsp:include page="header.jsp"></jsp:include>
 <br>
-<a href=HomePage.jsp style="color:black;text-decoration:none ;font-size:35px;font-weight:bold;">FlyAway</a>
+
 <br><br>
 <div align="center">
 <h1>Insert New Flight Details</h1>

@@ -9,22 +9,22 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <div align="center">
-<h1>Insert New AirLine Details</h1>
+<h1>Search Ticket</h1>
 
 <div style="border:3px solid black;width:25%;border-radius:20px;padding:20px" align="center">
-<form action="addairline" method="post">
+<form action="Ticket.jsp" method="post">
 	<table border="1">
 		<tr>
-			<td>AirLine Name:</td>
-			<td><input type="text" name="airlineName"></td>
+			<td>Email:</td>
+			<td><input type="text" name="email"></td>
 		</tr>
 		<tr>
-			<td>AirLine Number:</td>
-			<td><input type="text" name="airlineNo"></td>
+			<td>ticket Number:</td>
+			<td><input type="text" name="ticket"></td>
 		</tr>
 		<tr>
 			<td><input type="reset" value="Reset"></td>
-			<td><input type="submit" value="Add"></td>
+			<td><input type="submit" value="Search"></td>
 		</tr>
 	</table>
 </form>

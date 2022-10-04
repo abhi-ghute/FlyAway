@@ -12,7 +12,10 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<div align="center">
+<h1>Flight Details</h1>
 
+<div style="border:3px solid black;width:25%;border-radius:20px;padding:18px" align="center">
 	<%
 		Connection con = DBConnection.getConnection();
 		String query = "select * from flightDetails as f inner join tickets as t on f.id=t.flightId where t.id = ?";
@@ -70,6 +73,6 @@
 			<td><%=Integer.parseInt(rs.getString("passenger").trim()) * Integer.parseInt(rs.getString("price").trim())%></td>
 		</tr>
 	</table>
-
+</div>
 </body>
 </html>

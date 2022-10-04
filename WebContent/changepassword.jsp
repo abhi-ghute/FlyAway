@@ -8,6 +8,10 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<div align="center">
+<h1>Change Password</h1>
+
+<div style="border:3px solid black;width:25%;border-radius:20px;padding:20px" align="center">
 <form action="changepassword" method="post">
 	<table border="1">
 		<tr>
@@ -28,5 +32,7 @@
 		</tr>
 	</table>
 </form>
+</div>
+</div>
 </body>
 </html>

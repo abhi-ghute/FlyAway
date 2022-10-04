@@ -68,32 +68,23 @@ body {
 	<div class="header">
 		<a href="#default" class="logo">FlyAway</a>
 		<div class="header-right">
-			<a href="#home">Home</a> 
 			<%
 			String admin = (String)session.getAttribute("user");
 			if(admin!=null && admin.equals("admin")) {%>
+				<a href="addFlight.jsp">Home</a>
+				<a href=addAirLine.jsp>AddAirLine</a>
+				<a href=addPlaces.jsp>AddCity</a>
 				<a href="changepassword.jsp">Change Password</a>
 				<a href="logout.jsp">Logout</a>
 			<%}else{%>
+				<a href="home.jsp">Home</a>
+				<a href="SearchTicket.jsp">SearchTicket</a>
 				<a href="login.jsp">Login</a>
 			<%}
 			%>
 			
 		</div>
 	</div>
-
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
-<script type="text/javascript">
-$(document).ready(function () {
-    $('a').click(function(e) {
-        $('a').removeClass('active');
-
-        var $this = $(this);
-        if (!$this.hasClass('active')) {
-            $this.addClass('active');
-        }
-        //e.preventDefault();
-    });
-});
-</script>
 </html>
