@@ -36,7 +36,7 @@ public class PaymentController extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.println("<script type=\"text/javascript\">");
 			out.println("alert('Problem occured while Adding..please add again...');");
-			out.println("location='home.jsp';");
+			out.println("location='addFlight.jsp';");
 			out.println("</script>");
 		}
 	}

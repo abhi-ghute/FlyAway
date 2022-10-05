@@ -44,7 +44,7 @@ public class AddFlightController extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.println("<script type=\"text/javascript\">");
 			out.println("alert('AirLine added Successfully...');");
-			out.println("location='home.jsp';");
+			out.println("location='addFlight.jsp';");
 			out.println("</script>");
 		} else {
 			PrintWriter out = response.getWriter();

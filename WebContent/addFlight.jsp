@@ -65,9 +65,9 @@
 		<option value="<%=rs.getString("name")%>"><%=rs.getString("name")%></option>
 		<%}%>
 	</select><br><br>
-	<label for=departure>Departure :-</label> <input type="date" name="departure" id="departure" /><br><br>
-	<label for=time>Time :-</label> <input type="time" name="time" id="time" /><br><br>
-	<label for=price>Price :-</label> <input type="text" name="price" id="price" /><br><br>
+	<label for=departure>Departure :-</label> <input type="date" name="departure" id="departure" required/><br><br>
+	<label for=time>Time :-</label> <input type="time" name="time" id="time" required/><br><br>
+	<label for=price>Price :-</label> <input type="text" name="price" id="price" required/><br><br>
 	<input type="submit" value="submit" id ="myForm"/> <input type="reset" />
 </form>
 </div>

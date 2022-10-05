@@ -29,7 +29,7 @@ public class LoginController extends HttpServlet {
 		HttpSession session = request.getSession();
 		String admin = (String)session.getAttribute("user");
 		if(admin!=null && admin.equals("admin")) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("addFlight.jsp");
 			dispatcher.forward(request, response);
 		}
 		
@@ -38,7 +38,7 @@ public class LoginController extends HttpServlet {
 		if (check) {
 			session.setAttribute("user", request.getParameter("userName"));
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("addFlight.jsp");
 			dispatcher.forward(request, response);
 		} else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");

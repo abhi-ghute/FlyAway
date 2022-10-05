@@ -36,8 +36,8 @@ public class AddPlacesController extends HttpServlet {
 		if (check) {
 			PrintWriter out = response.getWriter();
 			out.println("<script type=\"text/javascript\">");
-			out.println("alert('AirLine added Successfully...');");
-			out.println("location='home.jsp';");
+			out.println("alert('City added Successfully...');");
+			out.println("location='addFlight.jsp';");
 			out.println("</script>");
 		} else {
 			PrintWriter out = response.getWriter();

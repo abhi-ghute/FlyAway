@@ -25,12 +25,12 @@
 		<tr>
 			<td>Expiry Month and year:</td>
 			<td><input type="Month" name="expiry" required>
-			<input type="hidden" value="<%=request.getParameter("ticketID")%>" name="ticketID">
+			<input type="hidden" value="<%=request.getParameter("ticketID")%>" name="ticketID" required>
 			</td>
 		</tr>
 		<tr>
 			<td><input type="reset" value="Reset"></td>
-			<td><input type="submit" value="Login"></td>
+			<td><input type="submit" value="Pay"></td>
 		</tr>
 	</table>
 </form>

@@ -16,7 +16,7 @@
 	<table border="1">
 		<tr>
 			<td>Place:</td>
-			<td><input type="text" name="place"></td>
+			<td><input type="text" name="place" required></td>
 		</tr>
 		<tr>
 			<td><input type="reset" value="Reset"></td>

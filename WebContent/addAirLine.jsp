@@ -16,11 +16,11 @@
 	<table border="1">
 		<tr>
 			<td>AirLine Name:</td>
-			<td><input type="text" name="airlineName"></td>
+			<td><input type="text" name="airlineName" required></td>
 		</tr>
 		<tr>
 			<td>AirLine Number:</td>
-			<td><input type="text" name="airlineNo"></td>
+			<td><input type="text" name="airlineNo" required></td>
 		</tr>
 		<tr>
 			<td><input type="reset" value="Reset"></td>

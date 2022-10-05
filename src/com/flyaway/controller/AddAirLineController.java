@@ -37,13 +37,13 @@ public class AddAirLineController extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.println("<script type=\"text/javascript\">");
 			out.println("alert('AirLine added Successfully...');");
-			out.println("location='home.jsp';");
+			out.println("location='addFlight.jsp';");
 			out.println("</script>");
 		} else {
 			PrintWriter out = response.getWriter();
 			out.println("<script type=\"text/javascript\">");
 			out.println("alert('Problem occured while Adding..please add again...');");
-			out.println("location='changepassword.jsp';");
+			out.println("location='home.jsp';");
 			out.println("</script>");
 		}
 	}

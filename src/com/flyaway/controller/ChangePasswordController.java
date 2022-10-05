@@ -36,7 +36,7 @@ public class ChangePasswordController extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.println("<script type=\"text/javascript\">");
 			out.println("alert('Password changed Successfully...');");
-			out.println("location='home.jsp';");
+			out.println("location='addFlight.jsp';");
 			out.println("</script>");
 			
 //			RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");

@@ -18,23 +18,23 @@
 	<table border="1">
 		<tr>
 			<td>Name:</td>
-			<td><input type="text" name="name"></td>
+			<td><input type="text" name="name" required></td>
 		</tr>
 		<tr>
 			<td>Email:</td>
-			<td><input type="text" name="email"></td>
+			<td><input type="text" name="email" required></td>
 		</tr>
 		<tr>
 			<td>Password:</td>
-			<td><input type="password" name="password"></td>
+			<td><input type="password" name="password" required></td>
 		</tr>
 		<tr>
 			<td>Mobile No.</td>
-			<td><input type="text" name="mob"></td>
+			<td><input type="text" name="mob" required></td>
 		</tr>
 		<tr>
 			<td>Age:</td>
-			<td><input type="text" name="age">
+			<td><input type="text" name="age" required>
 			<input type="hidden" name="flightId" value="<%=request.getParameter("id")%>">
 			<input type="hidden" name="passenger" value="<%=request.getParameter("passenger")%>">
 			</td>

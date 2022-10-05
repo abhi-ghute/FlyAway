@@ -16,11 +16,11 @@
 	<table border="1">
 		<tr>
 			<td>Email:</td>
-			<td><input type="text" name="email"></td>
+			<td><input type="text" name="email" required></td>
 		</tr>
 		<tr>
 			<td>ticket Number:</td>
-			<td><input type="text" name="ticket"></td>
+			<td><input type="text" name="ticket" required></td>
 		</tr>
 		<tr>
 			<td><input type="reset" value="Reset"></td>

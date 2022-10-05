@@ -58,10 +58,10 @@
 				</select><br>
 				<br> 
 				<label>No of Passengers : </label>
-				<input type="text" name="passenger"><br><br>
+				<input type="text" name="passenger" required><br><br>
 				
 				<label>Date : </label>
-				<input type="date" name="tdate"><br><br>
+				<input type="date" name="tdate" required><br><br>
 				
 				<input type="submit" value="submit" id="myForm" /> <input
 					type="reset" />
